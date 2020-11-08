@@ -19,7 +19,24 @@
 - 2D version.
   ![image](https://github.com/Ray0907/intro2algorithms/blob/master/static/1/2dversion.png)
 
+online Latex[https://www.codecogs.com/latex/eqneditor.php]
+
 - a is a peak iff a >=b, a>=d, a>=c, a>=e
 - greedy ascent algorithm
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\theta(nm)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\theta(nm)" title="\theta(nm)" /></a> theata(n^2) (if m=n)
 
-$\theta$(nm)
+n cols m rows
+n->
+mˇ
+find max
+
+- O(mlogn)
+
+# Asymptotic notation
+
+- f(10^7) O(1) means theata(1)
+- f(20\*n ^7) O(n^7)
+- f(log(n^100)) O(log(n)) (Reminds: log(10^3) = 3\* log(10))
+- <a href="https://www.codecogs.com/eqnedit.php?latex=log_{\log&space;5}{\(log&space;n)&space;}^{100}&space;->&space;\theta(log(log&space;n))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?log_{\log&space;5}{\(log&space;n)&space;}^{100}&space;->&space;\theta(log(log&space;n))" title="log_{\log 5}{\(log n) }^{100} -> \theta(log(log n))" /></a>
+
+- <a href="https://www.codecogs.com/eqnedit.php?latex=log_{\log&space;5}{\(log&space;(n^{100}))&space;}&space;->&space;log(100log&space;n)->\theta(log(log&space;n))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?log_{\log&space;5}{\(log&space;(n^{100}))&space;}&space;->&space;log(100log&space;n)->\theta(log(log&space;n))" title="log_{\log 5}{\(log (n^{100})) } -> log(100log n)->\theta(log(log n))" /></a>
