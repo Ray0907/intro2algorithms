@@ -19,6 +19,8 @@
 - 2D version.
   ![image](https://github.com/Ray0907/intro2algorithms/blob/master/static/1/2dversion.png)
 
+# Recitation
+
 online Latex[https://www.codecogs.com/latex/eqneditor.php]
 
 - a is a peak iff a >=b, a>=d, a>=c, a>=e
