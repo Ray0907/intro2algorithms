@@ -42,6 +42,7 @@
 - **list**
   - L.append(x) -> O(1) time - obvious if you think of infinite array but how would you have >1 on RAM via table doubling [Lecture 9]
 - ![image](https://github.com/Ray0907/intro2algorithms/blob/master/static/2/2_list.png)
+
 - ![image](https://github.com/Ray0907/intro2algorithms/blob/master/static/2/2_list_2.png)
 
 ## Document Distance Problem
