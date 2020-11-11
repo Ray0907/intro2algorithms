@@ -12,13 +12,24 @@ def word_frequencies_for_file(filename):
 		line_list = f.readlines()
 		word_list = get_words_from_line_list(line_list)
 		freq_mapping = count_frequency(word_list)
+		insertion_sort(freq_mapping)
 	return freq_mapping
+
+def insertion_sort(A):
+	for j in range(len(A)):
+		key = A[j]
+		i = j -1
+		while i> -1 and A[i] > key:
+			A[i+1] = A[i]
+			i = i-1
+		A[i+1] = key
+	return A
 
 def get_words_from_line_list(L):
 	word_list = []
 	for line in L:
 		words_in_line = get_words_from_string(line)
-		word_list = word_list + words_in_line
+		word_list.extend(words_in_line)
 	return word_list
 
 def get_words_from_string(line):
@@ -58,16 +69,27 @@ def vector_angle(L1, L2):
 
 def inner_product(L1, L2):
 	sum =0.0
-	for word1, count1 in L1:
-		for word2, count2 in L2:
-			if word1 == word2:
-				sum += count1 * count2
-	return sum
-
+	i = 0
+	j = 0
+	while i < len(L1) and j < len(L2):
+		# L1[i:] and L2[j:] yet to be processed
+		if L1[i][0] == L2[j][0]:
+			# both vectors have this word
+			sum += L1[i][1] * L2[j][1]
+			i += 1
+			j += 1
+		elif L1[i][0] < L2[j][0]:
+			# word L1[i][0] is in  L1 but not L2
+			i += 1
+		else:
+			# word L2[j][0] is in L2 but not L1
+			j += 1
+	return sum 
+	
 def main():
 	if len(sys.argv) != 3:
-		print('Usuage: python docdist1.py filename_1 filename_2')
-		exit()
+			print('Usuage: python docdist3.py filename_1 filename_2')
+			exit()
 	else:
 		filename_1 = sys.argv[1]
 		filename_2 = sys.argv[2]

@@ -18,7 +18,7 @@ def get_words_from_line_list(L):
 	word_list = []
 	for line in L:
 		words_in_line = get_words_from_string(line)
-		word_list = word_list + words_in_line
+		word_list.extend(words_in_line)
 	return word_list
 
 def get_words_from_string(line):
@@ -66,8 +66,8 @@ def inner_product(L1, L2):
 
 def main():
 	if len(sys.argv) != 3:
-		print('Usuage: python docdist1.py filename_1 filename_2')
-		exit()
+			print('Usuage: python docdist2.py filename_1 filename_2')
+			exit()
 	else:
 		filename_1 = sys.argv[1]
 		filename_2 = sys.argv[2]

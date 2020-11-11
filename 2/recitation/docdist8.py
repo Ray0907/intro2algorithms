@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 import os, sys, math
 import cProfile
+import string
+
+translation_table = str.maketrans(string.punctuation + string.ascii_uppercase, ' '* len(string.punctuation) + string.ascii_lowercase)
 
 def word_frequencies_for_file(filename):
 	line_list = []
@@ -14,14 +17,39 @@ def word_frequencies_for_file(filename):
 		freq_mapping = count_frequency(word_list)
 	return freq_mapping
 
-def get_words_from_line_list(L):
-	word_list = []
-	for line in L:
-		words_in_line = get_words_from_string(line)
-		word_list = word_list + words_in_line
+def merge_sort(A):
+	n = len(A)
+	if n==1:
+		return A
+	mid = n //2
+	L = merge_sort(A[:mid])
+	R = merge_sort(A[mid:])
+	return merge(L, R)
+
+def merge(L, R):
+	i = 0
+	j = 0
+	answer = []
+	while i < len(L) and j < len(R):
+		if L[i] < R[j]:
+			answer.append(L[i])
+			i += 1
+		else:
+			answer.append(R[j])
+			j += 1
+	if i < len(L):
+		answer.extend(L[i:])
+	if j < len(R):
+		answer.extend(R[j:])
+	return answer
+
+def get_words_from_line_list(line):
+	line = line[0].translate(translation_table)
+	word_list = line.split()
 	return word_list
 
 def get_words_from_string(line):
+	translation_table =string
 	word_list = []
 	character_list = []
 	for c in line:
@@ -40,16 +68,13 @@ def get_words_from_string(line):
 	return word_list
 
 def count_frequency(word_list):
-	L = []
+	D = {}
 	for new_word in word_list:
-		# Loop statements may have an else clause
-		for entry in L:
-			if new_word == entry[0]:
-				entry[1] = entry[1] +1
-				break
+		if new_word in D:
+			D[new_word] = D[new_word] +1
 		else:
-			L.append([new_word, 1])
-	return L
+			D[new_word] = 1
+	return D
 
 def vector_angle(L1, L2):
 	numerator = inner_product(L1, L2)
@@ -58,16 +83,15 @@ def vector_angle(L1, L2):
 
 def inner_product(L1, L2):
 	sum =0.0
-	for word1, count1 in L1:
-		for word2, count2 in L2:
-			if word1 == word2:
-				sum += count1 * count2
+	for key in L1:
+		if key in L2:
+			sum += L1[key] * L2[key]
 	return sum
-
+	
 def main():
 	if len(sys.argv) != 3:
-		print('Usuage: python docdist1.py filename_1 filename_2')
-		exit()
+			print('Usuage: python docdist6.py filename_1 filename_2')
+			exit()
 	else:
 		filename_1 = sys.argv[1]
 		filename_2 = sys.argv[2]
@@ -75,6 +99,13 @@ def main():
 		sorted_word_list_2 = word_frequencies_for_file(filename_2)
 		distance = vector_angle(sorted_word_list_1, sorted_word_list_2)
 		print("The distance between the documents is: %0.6f (radians)" % distance)
+
+def get_words_from_text(text):
+	text = text.translate(translation_table)
+	word_list = text.split()
+	return word_list
+
+
 
 if __name__ == '__main__':
 	cProfile.run('main()')
