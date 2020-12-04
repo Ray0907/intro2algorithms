@@ -39,3 +39,5 @@ e.g. when input is A = [n, n − 1, n − 2, . . . , 2, 1]
   => theta(n\*logn)
 
 ## Recurrence solving
+
+# Recitation
