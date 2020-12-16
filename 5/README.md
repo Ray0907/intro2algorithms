@@ -35,4 +35,4 @@
 
     - new requirement: Rank(t): How many planes are scheduled to land at times ≤ t? The new requirement
       necessitates a design amendment.
-      ![image](https://github.com/Ray0907intro2algorithms/blob/master/static/5bst_1.png)
+      ![image](https://github.com/Ray0907/intro2algorithms/blob/master/static/5/bst_1.png)
