@@ -23,7 +23,6 @@
   - ![image](https://github.com/Ray0907/intro2algorithms/blob/master/static/6/avl_insert_ex1.png)
   - ![image](https://github.com/Ray0907/intro2algorithms/blob/master/static/6/avl_insert_ex2.png)
   - ![image](https://github.com/Ray0907/intro2algorithms/blob/master/static/6/avl_rotation.png)
-  - ![]
   - fix AVL property
 - if x's right child is right-heavy or balanced
 
