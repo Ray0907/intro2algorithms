@@ -13,8 +13,16 @@ def insertionSort(items):
 
 	return items
 
+def mergeSort(items):
+	# privot = int(len(items)/2) -1
+	mid = len(items) //2
+
+	L = items[:mid]
+	R = items[mid:]
+	print(L,'\n',R)
+
+
 if __name__ == '__main__':
-	arr = [11, 7, 6, 10, 9, 28, 77, 1]
-	print('BEFORE' ,arr)
-	arr = insertionSort(arr)
-	print('AFTER', arr)
+	arr = [11, 7, 6, 10, 9, 28, 77]
+	# arr = insertionSort(arr)
+	mergeSort(arr)
