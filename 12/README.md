@@ -13,3 +13,8 @@
   - Karatsuba
   - Toom-Cook generalizes Karatsuba
 - High Precision Divis
+
+# Recitation
+
+- Karatsuba
+- Newton
