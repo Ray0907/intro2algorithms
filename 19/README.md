@@ -45,3 +45,7 @@
 - Recursive formulation: δ(s, v) = min{w(u, v) + δ(s, u) (u, v) ∈ E}
 - Memoized DP algorithm: takes infinite time if cycles!
 - works for directed acyclic graphs in O(V + E)
+
+## Optimal Sub-structure
+
+- DP takes the advantage of the optimal sub-structure of a problem. A problem has an optimal substructure if the optimum answer to the problem contains optimum answer to smaller sub-problems.
