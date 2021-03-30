@@ -30,3 +30,19 @@
   4. order: for i = n, n − 1, . . . , 1, 0
      total time = Θ(n^2)
   5. solution = DP[0]
+
+### Perfect-Information Blackjack
+
+      > BJ(i):
+         if n-1 < 4: return 0, since there are not enough cards
+         for p in range(2, n-i-2): # number of cards taken # player’s cards by deal order (player, then dealer, then player)
+            player = sum(c*i, c*{i+2}, c*{i+4:i+p+2})
+            if player > 21: # bust
+               options.append(-1 + BJ(i+p+2))
+               break
+            for d in range(2, n-i-p):
+               dealer = sum(c*{i+1}, c*{i+3}, c\*{i+p+2:i+p+d})
+               if dealer >= 17: break
+            if dealer > 21: dealer = 0 # bust
+            options.append(cmp(player, dealer) + BJ(i+p+d))
+         return max(options)
