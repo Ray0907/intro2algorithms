@@ -22,3 +22,5 @@
    - only need to keep last 2 rows/columns => linear space
    - total time = Θ(|x| · |y|)
 5. original problem: c(0, 0)
+
+### Dynamic Programming: Knapsack Problem
