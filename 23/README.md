@@ -42,6 +42,10 @@
   - nondeterministic model: algorithm makes guesses & then says YES or NO
   - guesses guaranteed to lead to YES outcome if possible (no otherwise)
 
+## NP-hardness
+
+- is the defining property of a class of problems that are informally "at least as hard as the hardest problems in NP". A simple example of an NP-hard problem is the subset sum problem.
+
 ## Example
 
 - Tetris ∈ NP
